@@ -48,30 +48,73 @@
             color: inherit;
         }
 
-        /* HEADER / NAV */
+                /* HEADER / NAV */
         header {
             position: absolute;
             top: 0;
             width: 100%;
-            padding: 20px 5%;
+            padding: 30px 5%;
             display: flex;
             justify-content: center;
             z-index: 20;
         }
-        
-        .logo-img {
-            max-height: 100px;
-            width: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-            background-color: white; /* Adds a nice background if logo is transparent */
-            padding: 5px;
+
+        /* The glowing animated ring */
+        .logo-wrapper {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            /* Beautiful gold and pink gradient border */
+            background: linear-gradient(45deg, var(--soft-gold), var(--blush-pink));
+            padding: 4px; /* Thickness of the gradient ring */
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+            animation: floatingLogo 4s ease-in-out infinite;
         }
 
-        .logo-img:hover {
-            transform: scale(1.05);
+        /* The spinning dashed magical border */
+        .logo-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -8px; right: -8px; bottom: -8px; left: -8px;
+            border-radius: 50%;
+            border: 1px dashed var(--warm-brown);
+            animation: spin 15s linear infinite;
+            opacity: 0.6;
         }
+
+        /* The circle that cuts out the image */
+        .logo-inner {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* The actual image */
+        .logo-img {
+            /* We zoom the image in to 135% to push the dark blurry edges outside of the circle! */
+            width: 135%; 
+            height: 135%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        /* Logo Animations */
+        @keyframes floatingLogo {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
 
         /* ANIMATIONS */
         .fade-in {
@@ -457,10 +500,14 @@
     </style>
 </head>
 <body>
-
     <header>
-        <img src="logo.jpg" alt="ArtsMagic by Muskan Logo" class="logo-img" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<h2 style=\'color: var(--warm-brown);\'>ArtsMagic</h2>');">
+        <div class="logo-wrapper">
+            <div class="logo-inner">
+                <img src="logo.png" alt="ArtsMagic by Muskan Logo" class="logo-img">
+            </div>
+        </div>
     </header>
+
 
     <section class="hero" id="home">
         <div class="orb orb-1"></div>
