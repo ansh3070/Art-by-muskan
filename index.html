@@ -60,11 +60,13 @@
         }
         
         .logo-img {
-            max-height: 100px; /* Adjust size of your logo */
+            max-height: 100px;
             width: auto;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
+            background-color: white; /* Adds a nice background if logo is transparent */
+            padding: 5px;
         }
 
         .logo-img:hover {
@@ -105,13 +107,11 @@
             padding: 120px 5% 60px;
             position: relative;
             overflow: hidden;
-            /* Aesthetic Animated Gradient Background */
             background: linear-gradient(-45deg, #FFF7F2, #FADADD, #f9e4e6, #fff0e6);
             background-size: 400% 400%;
             animation: gradientMove 15s ease infinite;
         }
 
-        /* Glassmorphism content box */
         .hero-content {
             background: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(12px);
@@ -139,7 +139,6 @@
             opacity: 0.9;
         }
 
-        /* Floating Aesthetic Orbs */
         .orb {
             position: absolute;
             border-radius: 50%;
@@ -276,6 +275,7 @@
             width: 100%;
             height: 250px;
             overflow: hidden;
+            background-color: #f5f5f5;
         }
 
         .product-img {
@@ -334,6 +334,7 @@
             overflow: hidden;
             border-radius: 15px;
             cursor: pointer;
+            background-color: #f5f5f5;
         }
 
         .gallery-item img {
@@ -449,7 +450,6 @@
             color: #888;
         }
 
-        /* Mobile specific adjustments */
         @media (max-width: 480px) {
             .btn-group { flex-direction: column; width: 100%; }
             .btn { width: 100%; }
@@ -459,7 +459,7 @@
 <body>
 
     <header>
-        <img src="https://drive.google.com/uc?export=view&id=1AvTZKj0V4sPNqFRPSShnI1ekbeY63Seg" alt="ArtsMagic by Muskan Logo" class="logo-img">
+        <img src="logo.png" alt="ArtsMagic by Muskan Logo" class="logo-img" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<h2 style=\'color: var(--warm-brown);\'>ArtsMagic</h2>');">
     </header>
 
     <section class="hero" id="home">
@@ -482,7 +482,7 @@
             
             <div class="product-card fade-in">
                 <div class="product-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=600" alt="Custom Name Frame" class="product-img">
+                    <img src="https://placehold.co/600x400/FADADD/8B5E3C?text=Custom+Name+Frame&font=playfair-display" alt="Custom Name Frame" class="product-img">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Custom Name Frames</h3>
@@ -494,7 +494,7 @@
 
             <div class="product-card fade-in">
                 <div class="product-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&q=80&w=600" alt="Handmade Flower Bouquet" class="product-img">
+                    <img src="https://placehold.co/600x400/FFF7F2/8B5E3C?text=Flower+Bouquets&font=playfair-display" alt="Handmade Flower Bouquet" class="product-img">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Flower Bouquets</h3>
@@ -506,7 +506,7 @@
 
             <div class="product-card fade-in">
                 <div class="product-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=600" alt="Gift Box" class="product-img">
+                    <img src="https://placehold.co/600x400/D4AF37/FFFFFF?text=Gift+Boxes&font=playfair-display" alt="Gift Box" class="product-img">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Curated Gift Boxes</h3>
@@ -518,7 +518,7 @@
 
             <div class="product-card fade-in">
                 <div class="product-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1602920698124-71bcbf2db715?auto=format&fit=crop&q=80&w=600" alt="Handmade Candles" class="product-img">
+                    <img src="https://placehold.co/600x400/FADADD/8B5E3C?text=Handmade+Candles&font=playfair-display" alt="Handmade Candles" class="product-img">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Handmade Candles</h3>
@@ -535,19 +535,19 @@
         <h2 class="section-title fade-in">Our Craftsmanship</h2>
         <div class="gallery-grid">
             <div class="gallery-item fade-in">
-                <img src="https://images.unsplash.com/photo-1610992015732-2808158bda13?auto=format&fit=crop&q=80&w=500" alt="Crafting">
+                <img src="https://placehold.co/400x400/FFF7F2/8B5E3C?text=Gallery+1" alt="Crafting">
                 <div class="gallery-overlay"><i class="fas fa-heart"></i></div>
             </div>
             <div class="gallery-item fade-in">
-                <img src="https://images.unsplash.com/photo-1520187178332-9df3ceae4101?auto=format&fit=crop&q=80&w=500" alt="Details">
+                <img src="https://placehold.co/400x400/FADADD/8B5E3C?text=Gallery+2" alt="Details">
                 <div class="gallery-overlay"><i class="fas fa-heart"></i></div>
             </div>
             <div class="gallery-item fade-in">
-                <img src="https://images.unsplash.com/photo-1584448141569-69f342da535c?auto=format&fit=crop&q=80&w=500" alt="Packaging">
+                <img src="https://placehold.co/400x400/D4AF37/FFFFFF?text=Gallery+3" alt="Packaging">
                 <div class="gallery-overlay"><i class="fas fa-heart"></i></div>
             </div>
             <div class="gallery-item fade-in">
-                <img src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&q=80&w=500" alt="Gifts">
+                <img src="https://placehold.co/400x400/FFF7F2/8B5E3C?text=Gallery+4" alt="Gifts">
                 <div class="gallery-overlay"><i class="fas fa-heart"></i></div>
             </div>
         </div>
@@ -561,7 +561,7 @@
     </section>
 
     <footer id="contact">
-        <img src="https://drive.google.com/uc?export=view&id=1AvTZKj0V4sPNqFRPSShnI1ekbeY63Seg" alt="ArtsMagic Footer Logo" class="footer-logo fade-in">
+        <img src="logo.png" alt="ArtsMagic Footer Logo" class="footer-logo fade-in" onerror="this.style.display='none';">
         
         <div class="contact-info fade-in">
             <p><i class="fas fa-map-marker-alt" style="color: var(--soft-gold);"></i> Bilaspur, Chhattisgarh, India</p>
@@ -581,7 +581,6 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // Intersection Observer to trigger scroll fade-in animations
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
@@ -604,4 +603,3 @@
 
 </body>
 </html>
-
